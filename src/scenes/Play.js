@@ -20,7 +20,7 @@ class Play extends Phaser.Scene{
 
     create(){
         // green UI background
-        
+        this.physics.world.setFPS(60);
         mouse=this.input.mousePointer;
 this.starfield=this.add.tileSprite(0,0,640,480,'background').setOrigin(0,0);
 //this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
