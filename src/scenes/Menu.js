@@ -31,6 +31,18 @@ class Menu extends Phaser.Scene {
             },
             fixedWidth: 0
         }
+        let menuConfig2 = {
+          fontFamily: 'Courier',
+          fontSize: '10px',
+          backgroundColor: '#F3B141',
+          color: '#843605',
+          align: 'right',
+          padding: {
+              top: 5,
+              bottom: 5,
+          },
+          fixedWidth: 0
+      }
               
         // show menu text
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Card Stack', menuConfig).setOrigin(0.5);
@@ -38,9 +50,11 @@ class Menu extends Phaser.Scene {
         this.add.text(game.config.width/2, game.config.height/2+borderUISize+borderPadding, 'Hover the correct card symbol ', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
+        menuConfig2.backgroundColor = '#00FF00';
+        menuConfig2.color = '#000';
         this.add.text(game.config.width/2, game.config.height/2 + (borderUISize + borderPadding)*2, 'Press spacebar to play!', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + (borderUISize + borderPadding)*4, 'Credit Justin Park for everything!', menuConfig).setOrigin(0.5);
-
+        this.add.text(game.config.width/2, game.config.height/2 + (borderUISize + borderPadding)*4+borderUISize, 'but the rocket asset TY Professor Altice <3', menuConfig2).setOrigin(0.5);
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
