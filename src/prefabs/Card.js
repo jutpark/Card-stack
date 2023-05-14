@@ -14,6 +14,6 @@ class Card extends Phaser.GameObjects.Sprite{
     }
     reset(){
         //this.x=500;
-        this.x=game.config.height;
+        this.x=game.config.width;
     }
 }
