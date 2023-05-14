@@ -8,7 +8,7 @@ class Player extends Phaser.GameObjects.Sprite {
       this.isFiring=false;
       this.moveSpeed=2;
       this.sfxRocket = scene.sound.add('sfx_rocket'); // add rocket sfx
-      
+      this.load.audio('error', './assets/Cut error.wav');
     }
     //Player is a moving card stack, and it collects cards 1 # higher than it. 
     create(){
@@ -18,9 +18,11 @@ class Player extends Phaser.GameObjects.Sprite {
     this.y=game.input.mousePointer.y;
     if(this.y<50){
       this.y=50;
+      this.sound.play('error');
   }
   if(this.y>480){
 this.y=480;
+this.sound.play('error');
   }
 
     }
