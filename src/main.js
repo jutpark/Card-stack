@@ -1,22 +1,10 @@
 /*
 Justin Park
-Rocket Patrol but cursed by my awful voice acting
-6ish hours? IDK I wasn't keeping track and I left a lot to work on slugcon stuff
-new ship type + 15
-move while firing +5
-add time when hit newship +15
-increase chip speed after 30 seconds +5
-added visible timer +10
-added godawful explosion sounds +10
-added rainbow explosion particles +15
-https://www.youtube.com/watch?v=LEDPCfot_GY&ab_channel=MitchellHudson
-https://labs.phaser.io/index.html?dir=game%20objects/particle%20emitter/&q=
-citing for particles
-added game music +5
-https://blog.ourcade.co/posts/2020/phaser-3-web-audio-best-practices-games/
-added mouse movement +15
-https://steemit.com/utopian-io/@onepice/move-objects-according-to-the-mouse-position-with-phaser-3
-Total should be 95% but I got slugcon work + artg 120 to work on peeposad 
+Card Stacking scrolling game
+This was editted from my rocket patrol where I changed assets and turned enemies into scrolling cards that players pick based on the given card type.
+I am proud of getting to find a way to implement cards, since card games are my life and I'm happy with the card assets I created, and the sound effects I was able to make.
+I am also happy with how the game turned out, where instead of the goal being to avoid obstacles, its about decision making and choosing the correct option
+like a multiple choice test but speedy. 
 */
 let config={
     type: Phaser.CANVAS,
