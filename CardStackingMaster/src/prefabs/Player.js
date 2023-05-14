@@ -17,12 +17,15 @@ class Player extends Phaser.GameObjects.Sprite {
     update(){
     this.y=game.input.mousePointer.y;
     if(this.y<50){
-      this.reset();
+      this.y=50;
+  }
+  if(this.y>480){
+this.y=480;
   }
 
     }
     reset(){
-        this.y=50;
+        this.y=0;
     }
     
   }

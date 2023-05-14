@@ -1,6 +1,6 @@
-class Menu extends Phaser.Scene {
+class End extends Phaser.Scene {
     constructor() {
-        super("menuScene");
+        super("endScene");
         //I need a commit for my code to run
     }
     preload() {
@@ -30,20 +30,28 @@ class Menu extends Phaser.Scene {
         }
               
         // show menu text
-        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Card Stack', menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2, 'Use your mouse to move up and down. Move your cursor onto the correct card to win!', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'ROCKET PATROL', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2, 'Use ←→ arrows to move & (F) to fire', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press spacebar to play!', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press ← for Novice or → for Expert', menuConfig).setOrigin(0.5);
 
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);
         keyRIGHT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.RIGHT);
-        bar=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
     }
     update() {
-        
-        if (Phaser.Input.Keyboard.JustDown(bar)) {
+        if (Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+          // easy mode
+          game.settings = {
+            spaceshipSpeed: 3,
+            NewshipSpeed: 8,
+            gameTimer: 60000    
+          }
+          this.sound.play('sfx_select');
+          this.scene.start('playScene');    
+        }
+        if (Phaser.Input.Keyboard.JustDown(keyRIGHT)) {
           // hard mode
           game.settings = {
             spaceshipSpeed: 4,
@@ -53,5 +61,9 @@ class Menu extends Phaser.Scene {
           this.sound.play('sfx_select');
           this.scene.start('playScene');    
         }
+        
+        if (this.gameOver && Phaser.Input.Keyboard.JustDown(keyLEFT)) {
+            this.scene.start("endScene");
+          }
       }
 }
