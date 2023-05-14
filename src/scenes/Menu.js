@@ -31,10 +31,11 @@ class Menu extends Phaser.Scene {
               
         // show menu text
         this.add.text(game.config.width/2, game.config.height/2 - borderUISize - borderPadding, 'Card Stack', menuConfig).setOrigin(0.5);
-        this.add.text(game.config.width/2, game.config.height/2, 'Use your mouse to move up and down. Move your cursor onto the correct card to win!', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2, 'Move cursor up and down using mouse. ', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2+borderUISize+borderPadding, 'Hover the correct card symbol ', menuConfig).setOrigin(0.5);
         menuConfig.backgroundColor = '#00FF00';
         menuConfig.color = '#000';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding, 'Press spacebar to play!', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + (borderUISize + borderPadding)*2, 'Press spacebar to play!', menuConfig).setOrigin(0.5);
 
         // define keys
         keyLEFT = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.LEFT);

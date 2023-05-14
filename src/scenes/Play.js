@@ -196,7 +196,7 @@ checkCollision(rocket, ship) {
       boom.destroy();                     // remove explosion sprite
     });
     if(this.swap==1){
-    this.clock = this.time.delayedCall(250, () => {
+    this.clock = this.time.delayedCall(450, () => {
       this.rng=Math.floor(Math.random() * 4);
       if(this.rng==0){
         this.symbol="diamond";
