@@ -20,6 +20,7 @@ class Play extends Phaser.Scene{
 
     create(){
         // green UI background
+        
         mouse=this.input.mousePointer;
 this.starfield=this.add.tileSprite(0,0,640,480,'background').setOrigin(0,0);
 //this.add.rectangle(0, borderUISize + borderPadding, game.config.width, borderUISize * 2, 0x00FF00).setOrigin(0, 0);
@@ -112,11 +113,14 @@ update(){
 }
 
 this.starfield.tilePositionX-=4;
-this.p1Rocket.update();
-this.ship01.update();
-this.ship02.update();
-this.ship03.update();
-this.ship04.update();
+this.clock = this.time.delayedCall(32, () => {
+  this.p1Rocket.update();
+  this.ship01.update();
+  this.ship02.update();
+  this.ship03.update();
+  this.ship04.update();
+}, null, this);
+
 //this.timeRight.text = (game.settings.gameTimer/1000)-Math.trunc(this.time.now/1000);
 //console.log(this.time.now);
 // check collisions
@@ -162,11 +166,11 @@ if(this.checkCollision(this.p1Rocket, this.ship03)) {
   }
 
   if (this.gameOver==false) {               
-    this.p1Rocket.update();         // update rocket sprite
-    this.ship01.update();           // update spaceships (x3)
-    this.ship02.update();
-    this.ship03.update();
-    this.ship04.update();
+    //this.p1Rocket.update();         // update rocket sprite
+    //this.ship01.update();           // update spaceships (x3)
+    //this.ship02.update();
+    //this.ship03.update();
+    //this.ship04.update();
     
 }else{
   this.scene.start('menuScene');
