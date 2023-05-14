@@ -125,9 +125,10 @@ this.clock = this.time.delayedCall(32, () => {
 //console.log(this.time.now);
 // check collisions
 if(this.checkCollision(this.p1Rocket, this.ship03)) {
-  console.log(this.rng);
+  //console.log(this.rng);
   if(this.rng!=2){
     this.gameOver=true;
+    this.sound.play('lose');
   }else{
     this.swap=1;
   this.shipExplode(this.ship03);
@@ -135,9 +136,10 @@ if(this.checkCollision(this.p1Rocket, this.ship03)) {
 }  
   }
   else if (this.checkCollision(this.p1Rocket, this.ship02)) {
-    console.log(this.rng);
+    //console.log(this.rng);
     if(this.rng!=1){
       this.gameOver=true;
+      this.sound.play('lose');
     }else{
       this.swap=1;
     this.shipExplode(this.ship02);
@@ -145,9 +147,10 @@ if(this.checkCollision(this.p1Rocket, this.ship03)) {
   }
   }
   else if (this.checkCollision(this.p1Rocket, this.ship01)) {
-    console.log(this.rng);
+    //console.log(this.rng);
     if(this.rng!=0){
       this.gameOver=true;
+      this.sound.play('lose');
     }else{
       this.swap=1;
     this.shipExplode(this.ship01);
@@ -155,9 +158,10 @@ if(this.checkCollision(this.p1Rocket, this.ship03)) {
   }
 }
   else if (this.checkCollision(this.p1Rocket, this.ship04)) {
-    console.log(this.rng);
+    //console.log(this.rng);
     if(this.rng!=3){
       this.gameOver=true;
+      this.sound.play('lose');
     }else{
       this.swap=1;
     this.shipExplode(this.ship04);
@@ -232,7 +236,7 @@ this.swap=0;
     emitter.explode(5);
     this.p1Score += ship.points;
     this.scoreLeft.text = this.p1Score;
-   
+   this.sound.play('card_flick');
     //this.sound.play('sfx_explosion');       
   }
   
