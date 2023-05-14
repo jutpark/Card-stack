@@ -15,7 +15,8 @@ class Play extends Phaser.Scene{
         this.load.image('newship', './assets/newrocket.png');
         this.load.atlas('flares', './assets/flares.png', './assets/flares.json');
         this.load.audio('music', './assets/Fixed song.wav');
-        
+        this.load.audio('lose', './assets/Loss cut.wav');
+        this.load.audio('card_flick', './assets/card flick.mp3');
       }
 
     create(){
